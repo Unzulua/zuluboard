@@ -12,4 +12,4 @@ out/
 .classpath
 yarn.lock
 node_modules
-grails-app/assets/javascripts/bundle.js
+grails-app/assets/javascripts/bundle*.js

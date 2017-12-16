@@ -9,8 +9,8 @@
 </head>
 
 <body>
-  Probando!!!
 
-  <asset:javascript src="application.js"/>
+  <div id="app" style="text-align: center">{{ message }}</div>
+  <asset:javascript src="bundle-hello.js"/>
 </body>
 </html>

@@ -1,1 +1,1 @@
-document.getElementById("app").innerHTML="<p>Rendered webpack bundle</p>";
+console.log("HELLO!!!")
