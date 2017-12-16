@@ -89,3 +89,4 @@ endpoints:
 # TODO: profile custom configuration
 foo:
     bar: mysetting
+

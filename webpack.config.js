@@ -12,6 +12,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        include: path.join(__dirname, 'src/main/webapp')
+      },
+      {
         test: /\.css$/,
         use: [
           {loader: 'style-loader'},

@@ -10,3 +10,6 @@ out/
 .project
 .settings
 .classpath
+yarn.lock
+node_modules
+grails-app/assets/javascripts/bundle.js
