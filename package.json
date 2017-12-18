@@ -2,7 +2,7 @@
   "name": "zuluboard",
   "version": "0.0.1",
   "description": "A profile for creating applications with node-based frontends using webpack",
-  "main": "index.js",
+  "main": "application.js",
   "repository": {},
   "scripts": {
     "start": "webpack --progress --watch",

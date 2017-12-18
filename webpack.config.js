@@ -2,8 +2,8 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    index: './src/main/webapp/index.js',
-    hello: './src/main/webapp/hello/index.js'
+    application: './src/main/webapp/application.js',
+    dashboard: './src/main/webapp/dashboard/index.js'
   },
   output: {
     path: path.join(__dirname, 'grails-app/assets/javascripts'),
@@ -12,18 +12,8 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   include: path.join(__dirname, 'src/main/webapp/**'),
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: [["es2015", { "modules": false }]]
-      //     }
-      //   }
-      // },
       {
-        test: /\.css$/,
+        test: /\.sass$/,
         use: [
           {loader: 'style-loader'},
           {loader: 'css-loader'}

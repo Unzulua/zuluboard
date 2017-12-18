@@ -49,8 +49,14 @@ dependencies {
     compile "org.grails.plugins:events"
     compile "org.grails.plugins:gsp"
     console "org.grails:grails-console"
+    compile 'com.bertramlabs.plugins:sass-asset-pipeline:2.14.7'
+
+    compile project(':grails-trello')
+
     profile "org.grails.profiles:webpack"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.6"
+    assets 'com.bertramlabs.plugins:sass-asset-pipeline:2.14.6'
+
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
 }
@@ -85,4 +91,13 @@ assetCompile.dependsOn(['bundle'])
 assets {
     minifyJs = true
     minifyCss = true
+
+    minifyOptions = [
+        languageMode: 'ES6',
+        targetLanguage: 'ES5', //Can go from ES6 to ES5 for those bleeding edgers
+        optimizationLevel: 'SIMPLE'
+    ]
+    excludes = ['**/*.sass']
+    includes = ['**/*.sass']
+    configOptions = [:]
 }
