@@ -1,15 +1,19 @@
 package zuluboard
 
-import com.foozulu.domain.Board
-import com.foozulu.domain.TaskList
+import com.foozulu.domain.Activity
+import com.foozulu.domain.ActivityType
 
 class DashboardController {
 
     def index() {
-        Set<TaskList> lists = [
-            new TaskList(name: 'primera'),
-            new TaskList(name: 'segunda')
+        List<Activity> activities = [
+            new Activity(cardName: "Una tarjeta", user: "Iris", project: "Cosas que hacer", date: new Date(), type: ActivityType.CREATE_CARD),
+            new Activity(cardName: "Buscar tipografía", user: "Iris", project: "Cosas que hacer", date: new Date(), type: ActivityType.CREATE_CARD),
+            new Activity(cardName: "Merendar", user: "Jesús", project: "Cosas hechas", date: new Date(), type: ActivityType.CREATE_CARD),
+            new Activity(cardName: "Merendar Más", user: "Jesús", project: "Cosas hechas", date: new Date(), type: ActivityType.CREATE_CARD),
+            new Activity(cardName: "Buscar tipografía", user: "Iris", project: "Cosas que hacer", date: new Date(), type: ActivityType.CREATE_CARD),
+            new Activity(cardName: "Merendar", user: "Jesús", project: "Cosas hechas", date: new Date(), type: ActivityType.CREATE_CARD)
         ]
-        respond([board: new Board(name: 'My board', lists: lists)])
+        respond([activities: activities])
     }
 }

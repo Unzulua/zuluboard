@@ -14,12 +14,11 @@
     <g:layoutHead/>
 </head>
 <body>
-
-    <div id="app" >
+    <main id="app" >
         <g:layoutBody/>
-    </div>
-
+    </main>
     <asset:javascript src="bundle-application.js"/>
+    <asset:javascript src="bundle-${pageProperty(name: "meta.component")}.js"/>
 
 </body>
 </html>

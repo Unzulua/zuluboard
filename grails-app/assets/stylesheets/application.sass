@@ -1,4 +1,41 @@
-@import reset //Reset file is .scss instead of .sass because assets pipeline plugin is looking for .scss. See SassAssetFileImporter class
+/* Reset file is .scss instead of .sass because assets pipeline plugin is looking for .scss. See SassAssetFileImporter class */
+@import reset
+main
+  display: grid
+  grid-template-columns: unquote("[todoStart] 1fr [todoEnd activityStart] 1fr [activityEnd]")
 
-body
-  color: blue
+.widget
+  border: 1px solid #2a2a2a
+  margin: 0.5rem
+  vertical-align: top
+
+  & > header
+    background-color: #2a2a2a
+    color: #ffffff
+    padding: 0.5rem
+    text-transform: uppercase
+
+  ul
+    padding: 1rem
+    li
+      &.newProject:not(:first-child)
+        margin-top: 1rem
+      &.newUser:not(:first-child)
+          margin-top: .5rem
+
+
+article
+  header
+    font-size: 1.2rem
+    font-weight: 900
+  section, footer
+    padding-left: 1rem
+
+span
+  font-weight: 900
+
+.todo
+  grid-column: todoStart / todoEnd
+
+.activity
+  grid-column: activityStart / activityEnd
