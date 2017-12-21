@@ -86,7 +86,3 @@ endpoints:
         unique-names: true
 
 ---
-# TODO: profile custom configuration
-foo:
-    bar: mysetting
-
