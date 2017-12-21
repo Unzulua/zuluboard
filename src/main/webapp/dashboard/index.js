@@ -19,8 +19,26 @@ Vue.component('activity', {
   `
 });
 
+
+Vue.component('task', {
+  props: ['date', 'description'],
+  template: `
+    <li>
+      <article>
+        <header>{{date}}</header>
+        <section>{{description}}</section>        
+      </article>
+    </li>
+  `
+});
+
 var activity = new Vue({
   el: '#activity'
+});
+
+
+var todoTasks = new Vue({
+  el: '#tasks'
 });
 
 for(var i = 1; i < activity.$children.length; i++) {

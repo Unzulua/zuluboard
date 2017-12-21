@@ -59,6 +59,7 @@ dependencies {
 
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
+    testCompile "cglib:cglib-nodep:3.2.5" //I had problems with unit tests when mocking a Service
 }
 
 bootRun {

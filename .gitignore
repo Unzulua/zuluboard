@@ -10,6 +10,7 @@ out/
 .project
 .settings
 .classpath
+.asscache
 yarn.lock
 node_modules
 grails-app/assets/javascripts/bundle*.js

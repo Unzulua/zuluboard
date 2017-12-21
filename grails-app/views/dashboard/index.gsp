@@ -7,8 +7,8 @@
 </head>
 
 <body>
-  <g:render template="todo" />
-  <g:render template="activity" />
+  <g:render template="todo" model="[tasks: tasks]"/>
+  <g:render template="activity" model="[activities: activities]"/>
 </body>
 
 </html>

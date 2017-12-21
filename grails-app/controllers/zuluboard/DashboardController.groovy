@@ -5,6 +5,8 @@ import com.foozulu.domain.ActivityType
 
 class DashboardController {
 
+    TaskService taskService
+
     def index() {
         List<Activity> activities = [
             new Activity(cardName: "Una tarjeta", user: "Iris", project: "Cosas que hacer", date: new Date(), type: ActivityType.CREATE_CARD),
@@ -14,6 +16,6 @@ class DashboardController {
             new Activity(cardName: "Buscar tipografía", user: "Iris", project: "Cosas que hacer", date: new Date(), type: ActivityType.CREATE_CARD),
             new Activity(cardName: "Merendar", user: "Jesús", project: "Cosas hechas", date: new Date(), type: ActivityType.CREATE_CARD)
         ]
-        respond([activities: activities])
+        respond([activities: activities, tasks: taskService.nextTasks()])
     }
 }
