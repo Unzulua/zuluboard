@@ -21,12 +21,13 @@ Vue.component('activity', {
 
 
 Vue.component('task', {
-  props: ['date', 'description'],
+  props: ['date', 'description', 'project'],
   template: `
     <li>
       <article>
-        <header>{{date}}</header>
-        <section>{{description}}</section>        
+        <header>{{project}}</header>
+        <span>{{date}}<span>
+        <section>{{description}}</section>
       </article>
     </li>
   `

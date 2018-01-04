@@ -3,7 +3,7 @@
   <ul id="tasks">
     <g:each in="${tasks}" var="task">
       <g:set var="date" value="${g.formatDate(date: task.dueDate, format: 'dd-MM-yyyy hh:mm', timeZone: "Europe/Madrid")}" />
-      <task date="${date}" description="${task.description}"></task>
+      <task date="${date}" description="${task.description}" project="${task.projectName}"></task>
     </g:each>
   </ul>
 </section>
