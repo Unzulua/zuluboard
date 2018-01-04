@@ -13,7 +13,7 @@ buildscript {
 }
 
 version "0.1"
-group "zuluboard"
+group "com.unzulua.board"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
