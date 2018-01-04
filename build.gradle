@@ -88,7 +88,6 @@ task webpack(type: YarnTask, dependsOn: 'yarn') {
 bootRun.dependsOn(['bundle'])
 assetCompile.dependsOn(['bundle'])
 
-
 assets {
     minifyJs = true
     minifyCss = true
