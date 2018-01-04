@@ -1,6 +1,6 @@
-package zuluboard.domain
+package com.unzulua.board.domain
 
-import com.foozulu.domain.Card
+import grails.trello.domain.Card
 
 class Task {
     String description

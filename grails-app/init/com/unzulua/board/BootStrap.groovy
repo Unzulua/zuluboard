@@ -1,4 +1,4 @@
-package zuluboard
+package com.unzulua.board
 
 class BootStrap {
 

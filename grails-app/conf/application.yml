@@ -2,7 +2,7 @@
 grails:
     profile: webpack
     codegen:
-        defaultPackage: zuluboard
+        defaultPackage: com.unzulua.board
     spring:
         transactionManagement:
             proxies: false

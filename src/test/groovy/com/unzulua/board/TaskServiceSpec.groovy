@@ -1,12 +1,12 @@
-package zuluboard
+package com.unzulua.board
 
-import com.foozulu.domain.Card
-import com.zulu.trello.TrelloApiService
+import grails.trello.domain.Card
+import grails.trello.TrelloApiService
 import grails.testing.services.ServiceUnitTest
 import groovy.time.TimeCategory
 import spock.lang.Specification
 import spock.lang.Unroll
-import zuluboard.domain.Task
+import com.unzulua.board.domain.Task
 
 class TaskServiceSpec extends Specification implements ServiceUnitTest<TaskService>{
 

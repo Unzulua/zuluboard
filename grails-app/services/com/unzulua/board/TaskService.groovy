@@ -1,9 +1,9 @@
-package zuluboard
+package com.unzulua.board
 
-import com.foozulu.domain.Card
-import com.zulu.trello.TrelloApiService
+import grails.trello.domain.Card
+import grails.trello.TrelloApiService
 import groovy.time.TimeCategory
-import zuluboard.domain.Task
+import com.unzulua.board.domain.Task
 
 class TaskService {
 

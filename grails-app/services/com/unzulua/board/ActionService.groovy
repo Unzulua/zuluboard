@@ -1,7 +1,7 @@
-package zuluboard
+package com.unzulua.board
 
-import com.zulu.trello.TrelloApiService
-import com.foozulu.domain.Action
+import grails.trello.TrelloApiService
+import grails.trello.domain.Action
 
 class ActionService {
 

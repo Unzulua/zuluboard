@@ -1,7 +1,7 @@
-package zuluboard
+package com.unzulua.board
 
-import com.foozulu.domain.Action
-import zuluboard.domain.Task
+import grails.trello.domain.Action
+import com.unzulua.board.domain.Task
 
 class DashboardController {
 

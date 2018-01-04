@@ -1,4 +1,4 @@
-package zuluboard
+package com.unzulua.board
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
