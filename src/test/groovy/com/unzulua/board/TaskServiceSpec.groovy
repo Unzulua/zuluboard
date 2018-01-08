@@ -34,6 +34,7 @@ class TaskServiceSpec extends Specification implements ServiceUnitTest<TaskServi
         given: "one card"
         Card card = new Card(id: 'card1', name: 'the name', description: 'the description', dueDate: new Date())
         trelloApiService.findAllCardsByDueDate(_, _) >> [ card ]
+        trelloApiService.findList(_) >> new grails.trello.domain.List(name: 'Test name')
 
         when:
         Task task = service.nextTasks()[0]
@@ -42,6 +43,7 @@ class TaskServiceSpec extends Specification implements ServiceUnitTest<TaskServi
         task.cardId == card.id
         task.description == "${card.name} - ${card.description}"
         task.dueDate == card.dueDate
+        task.projectName == 'Test name'
     }
 
     TrelloApiService trelloApiService = Mock()

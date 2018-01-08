@@ -17,8 +17,9 @@ class TaskService {
             to += days.days
         }
         trelloApiService.findAllCardsByDueDate(from, to).collect{ Card card ->
-            Task.from(card)
+            def task = Task.from(card)
+            task.setProject(trelloApiService.findList(task.idList))
+            task
         }
-
     }
 }
