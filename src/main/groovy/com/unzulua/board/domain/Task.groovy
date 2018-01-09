@@ -9,9 +9,10 @@ class Task {
     String cardId
     String projectName
     String idList
+    java.util.List<String> labels
 
     static Task from(Card card) {
-        Task task = new Task(cardId: card.id, dueDate: card.dueDate, idList: card.idList)
+        Task task = new Task(cardId: card.id, dueDate: card.dueDate, idList: card.idList, labels: card.labels)
         task.description = card.name
         task.projectName = ""
         if (card.description){

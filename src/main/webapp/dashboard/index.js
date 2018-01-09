@@ -19,16 +19,24 @@ Vue.component('activity', {
 
 
 Vue.component('task', {
-  props: ['date', 'description', 'project'],
+  props: ['date', 'description', 'project', 'labels'],
   template: `
     <li>
-      <article>
+      <article :class="this.tags()">
         <header>{{project}}</header>
         <span>{{date}}</span>
         <section>{{description}}</section>
       </article>
     </li>
-  `
+  `,
+  methods: {
+    tags: function(){
+      if (!this.labels){
+        return "";
+      }
+      return JSON.parse(this.labels).join(' ');
+    }
+  }
 });
 
 var activity = new Vue({
