@@ -11,9 +11,7 @@ Vue.component('activity', {
   template: `
     <li v-bind:class="{ newProject: projectName, newUser: userName }">
       <article>
-        <header>{{projectName}}</header>
-        <section><span>{{userName}}</span> {{type}} {{cardName}}</section>
-        <footer>{{date}}</footer>
+        <section>{{type}} card <span>{{cardName}}</span> by {{user}}</section>
       </article>
     </li>
   `

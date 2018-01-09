@@ -6,7 +6,7 @@ import grails.trello.domain.Action
 class ActionService {
 
     TrelloApiService trelloApiService
-    static Integer actionsToShow = 1
+    static Integer actionsToShow = 10
 
     List<Action> lastActions() {
         trelloApiService.retrieveActions(actionsToShow)
