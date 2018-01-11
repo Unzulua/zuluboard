@@ -1,11 +1,13 @@
 <section class="widget activity">
   <header><g:message code="dashboard.activity.title" /> </header>
   <ul id="activity">
-    <g:each in="${activities}" var="activity">
-      <g:set var="type" value="${g.message(code: 'activity.type.'+activity.type)}" />
-      <g:set var="date" value="${g.formatDate(date:  activity.date, format: 'dd-MM-yyyy hh:mm', timeZone: "Europe/Madrid")}" />
-      <activity project="${activity.project}" user="${activity.user}" type="${type}"
-                card-name="${activity.cardName}" date="${date}"></activity>
-    </g:each>
+      <activity
+        v-for="activity in ${groovy.json.JsonOutput.toJson(activities)}"
+
+        v-bind:type="activity.formattedType"
+        v-bind:date="activity.formattedDate"
+        v-bind:user="activity.user"
+        v-bind:card-name="activity.cardName"
+      ></activity>
   </ul>
 </section>

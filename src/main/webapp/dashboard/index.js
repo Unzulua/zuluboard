@@ -11,7 +11,7 @@ Vue.component('activity', {
   template: `
     <li v-bind:class="{ newProject: projectName, newUser: userName }">
       <article>
-        <section>{{type}} card <span>{{cardName}}</span> by {{user}}</section>
+        <section>{{type}} card <span>{{cardName}}</span> by {{user}} @ {{date}}</section>
       </article>
     </li>
   `
@@ -24,7 +24,7 @@ Vue.component('task', {
     <li>
       <article>
         <header>{{project}}</header>
-        <span>{{date}}<span>
+        <span>{{date}}</span>
         <section>{{description}}</section>
       </article>
     </li>
