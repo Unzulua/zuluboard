@@ -2,37 +2,33 @@ import Vue from 'vue';
 
 Vue.component('activities', {
   props: ['activities'],
-  template: `
-  <ul id="activity">
-      <activity
-        v-for="activity in activities"
-        :key="activity.id"
-        v-bind:type="activity.formattedType"
-        v-bind:date="activity.formattedDate"
-        v-bind:user="activity.user"
-        v-bind:card-name="activity.cardName"
-      ></activity>
-  </ul>
-  `
-});
-
-Vue.component('activity', {
-  props: ['project', 'user', 'type', 'cardName', 'date'],
-  data: function(){
-    return {
-      projectName: this.project,
-      userName: this.user
+  data: function() {
+    return { currentOrder: 'project' }
+  },
+  computed : {
+    actis: function() {
+      return this.activities.sort((a, b) => { return b[this.currentOrder] > a[this.currentOrder];});
+    }
+  },
+  methods: {
+    orderBy: function(newOrder){
+      this.currentOrder = newOrder
     }
   },
   template: `
-    <li v-bind:class="{ newProject: projectName, newUser: userName }">
-      <article>
-        <section>{{type}} card <span>{{cardName}}</span> by {{user}} @ {{date}}</section>
-      </article>
-    </li>
+  <div>
+    <button v-on:click="orderBy('date')">Order by date</button>
+    <button v-on:click="orderBy('project')">Order by project</button>
+    <ul>
+      <li v-for="activity in actis"  v-bind:class="{ newProject: activity.project, newUser: activity.user }">
+        <article>
+          <section>{{activity.formattedType}} card <span>{{activity.cardName}}</span> by {{activity.user}} @ {{activity.formattedDate}}</section>
+        </article>
+      </li>
+    </ul>
+  </div>
   `
 });
-
 
 Vue.component('task', {
   props: ['date', 'description', 'project', 'labels'],
@@ -59,21 +55,6 @@ var activities = new Vue({
   el: '#activities'
 });
 
-var activity = new Vue({
-  el: '#activity'
-});
-
-
 var todoTasks = new Vue({
   el: '#tasks'
 });
-
-for(var i = 1; i < activity.$children.length; i++) {
-  if(activity.$children[i].project === activity.$children[i - 1].project){
-    activity.$children[i].projectName = '';
-    if(activity.$children[i].user === activity.$children[i - 1].user){
-      activity.$children[i].userName = '';
-    }
-  }
-}
-
