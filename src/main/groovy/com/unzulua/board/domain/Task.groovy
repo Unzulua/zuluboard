@@ -1,7 +1,7 @@
 package com.unzulua.board.domain
 
 import grails.trello.domain.Card
-import grails.trello.domain.List
+import grails.trello.domain.BoardList
 
 class Task {
     String description
@@ -21,7 +21,7 @@ class Task {
         task
     }
 
-    void setProject(List list){
+    void setProject(BoardList list){
       this.projectName = list.name
     }
 }

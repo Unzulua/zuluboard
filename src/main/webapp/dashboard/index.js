@@ -1,5 +1,21 @@
 import Vue from 'vue';
 
+Vue.component('activities', {
+  props: ['activities'],
+  template: `
+  <ul id="activity">
+      <activity
+        v-for="activity in activities"
+        :key="activity.id"
+        v-bind:type="activity.formattedType"
+        v-bind:date="activity.formattedDate"
+        v-bind:user="activity.user"
+        v-bind:card-name="activity.cardName"
+      ></activity>
+  </ul>
+  `
+});
+
 Vue.component('activity', {
   props: ['project', 'user', 'type', 'cardName', 'date'],
   data: function(){
@@ -37,6 +53,10 @@ Vue.component('task', {
       return JSON.parse(this.labels).join(' ');
     }
   }
+});
+
+var activities = new Vue({
+  el: '#activities'
 });
 
 var activity = new Vue({

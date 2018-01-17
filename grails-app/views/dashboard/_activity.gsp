@@ -1,13 +1,10 @@
 <section class="widget activity">
   <header><g:message code="dashboard.activity.title" /> </header>
-  <ul id="activity">
-      <activity
-        v-for="activity in ${groovy.json.JsonOutput.toJson(activities)}"
+  <div id="activities">
+  <activities
+  v-bind:activities="${groovy.json.JsonOutput.toJson(activities)}"
+  >
+  <activities/>
+  </div>
 
-        v-bind:type="activity.formattedType"
-        v-bind:date="activity.formattedDate"
-        v-bind:user="activity.user"
-        v-bind:card-name="activity.cardName"
-      ></activity>
-  </ul>
 </section>
