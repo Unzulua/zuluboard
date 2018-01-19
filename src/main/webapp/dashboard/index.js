@@ -68,7 +68,7 @@ Vue.component('tasks', {
     }
   },
   template: `
-  <div>
+  <div v-if="this.tasks.length > 0">
     <button v-on:click="orderBy('dueDate')">Order by date</button>
     <button v-on:click="orderBy('projectName')">Order by project</button>
 
@@ -85,6 +85,8 @@ Vue.component('tasks', {
       </li>
     </ul>
   </div>
+
+  <div v-else> Nothing to do here </div>
   `
 });
 
