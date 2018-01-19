@@ -43,25 +43,21 @@ Vue.component('activities', {
   `
 });
 
-Vue.component('task', {
-  props: ['date', 'description', 'project', 'labels'],
+Vue.component('tasks', {
+  props: ['tasks'],
   template: `
-    <li>
-      <article :class="this.tags()">
-        <header>{{project}}</header>
-        <span>{{date}}</span>
-        <section>{{description}}</section>
-      </article>
-    </li>
-  `,
-  methods: {
-    tags: function(){
-      if (!this.labels){
-        return "";
-      }
-      return JSON.parse(this.labels).join(' ');
-    }
-  }
+  <div>
+    <ul>
+      <li v-for="t in tasks">
+        <article :class="t.labels">
+          <header>{{t.projectName}}</header>
+          <span>{{t.formattedDate}}</span>
+          <section>{{t.description}}</section>
+        </article>
+      </li>
+    </ul>
+  </div>
+  `
 });
 
 var activities = new Vue({
