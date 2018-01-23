@@ -81,8 +81,11 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
+    config:
+        locations:
+            - ~/.grails/trello.yml # development
+            - file:${TRELLO_CONFIG}/myconfig.yml #production
+
 endpoints:
     jmx:
         unique-names: true
-
----
