@@ -13,5 +13,14 @@
   "dependencies": {
     "vue": "^2.5.11",
     "webpack": "2.4.1"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.9.1",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1"
+  },
+  "scripts": {
+    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
   }
 }
