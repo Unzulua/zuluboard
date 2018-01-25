@@ -9,6 +9,6 @@ class ActionService {
     static Integer actionsToShow = 10
 
     List<Action> lastActions() {
-        trelloApiService.retrieveActions(actionsToShow)
+        trelloApiService.findActions(actionsToShow)
     }
 }
