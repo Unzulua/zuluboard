@@ -2,6 +2,7 @@ package com.unzulua.board.domain
 
 import grails.trello.domain.Card
 import grails.trello.domain.BoardList
+import grails.util.Holders
 
 class Task {
     String description
@@ -24,10 +25,14 @@ class Task {
     }
 
     private static formatDate(Date date){
-        date.format('dd-MM-yyyy hh:mm')
+        date.format(defaultDateFormat)
     }
 
     void setProject(BoardList list){
       this.projectName = list.name
+    }
+
+    private static String getDefaultDateFormat(){
+        Holders.grailsApplication.config.date.format.default
     }
 }
