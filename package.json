@@ -7,20 +7,21 @@
   "scripts": {
     "start": "webpack --progress --watch",
     "bundle": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start karma.conf.js"
   },
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.11",
-    "webpack": "2.4.1"
+    "vue": "^2.5.11"
   },
   "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.9",
     "jasmine-core": "^2.9.1",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.1"
-  },
-  "scripts": {
-    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
+    "karma-jasmine": "^1.1.1",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "2.4.1"
   }
 }
