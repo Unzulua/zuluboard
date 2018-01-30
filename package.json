@@ -14,12 +14,14 @@
     "vue": "^2.5.11"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "css-loader": "^0.28.9",
     "jasmine-core": "^2.9.1",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1",
+    "karma-webpack": "^2.0.9",
     "vue-loader": "^13.7.0",
     "vue-template-compiler": "^2.5.13",
     "webpack": "2.4.1"

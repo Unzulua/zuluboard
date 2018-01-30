@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Thu Jan 25 2018 18:55:26 GMT+0100 (CET)
+var webpackConfig = require('./webpack.config.js')
 
 module.exports = function(config) {
   config.set({
@@ -15,7 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/test/javascript/**/*Spec.js'
+      'src/test/javascript/index.js'
     ],
 
 
@@ -23,12 +24,13 @@ module.exports = function(config) {
     exclude: [
     ],
 
-
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/test/javascript/index.js': ['webpack']
     },
 
+		webpack: webpackConfig,
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -60,7 +62,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
