@@ -13,17 +13,17 @@ class ActionPresenter {
     private @Delegate Action action
 
     static ActionPresenter from(Action action, Locale locale) {
-        def date = formatDate(action.date)
+        def date = action.date.format(defaultDateFormat)
         def type = typeMessage(action.type, locale)
 
         new ActionPresenter(action: action, formattedType: type, locale: locale, formattedDate: date)
     }
 
-    private static formatDate(Date date){
-        date.format('dd-MM-yyyy hh:mm')
-    }
-
     private static typeMessage(ActionType type, Locale locale){
         Holders.applicationContext.messageSource.getMessage('activity.type.'+type, [] as Object[], '', locale)
+    }
+
+    private static String getDefaultDateFormat(){
+        Holders.grailsApplication.config.date.format.default
     }
 }

@@ -89,3 +89,7 @@ grails:
 endpoints:
     jmx:
         unique-names: true
+
+date:
+  format:
+    default: 'dd-MM-yyyy hh:mm'
