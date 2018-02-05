@@ -1,20 +1,36 @@
 /* Reset file is .scss instead of .sass because assets pipeline plugin is looking for .scss. See SassAssetFileImporter class */
 @import reset
+@import variables
+
+body
+  background-color: $light-color
+  font:
+    family: $primary-font
+    size: 0.9em
+  line-height: 1.2em
+.main-header
+  background:
+    image: url('bg-even-comming.jpg')
+    color: $bg-color
+    position: top
+    size: cover
+  clip-path: polygon(0 0%, 100% 0, 100% 50%, 0% 100%)
+  height: 5em
+  position: fixed
+  top: 0
+  width: 100%
 main
   display: grid
-  grid-template-columns: unquote("[todoStart] 1fr [todoEnd activityStart] 1fr [activityEnd]")
-
+  grid-template-columns: unquote("[todoStart] 50% [todoEnd activityStart] 50% [activityEnd]")
 .widget
-  border: 1px solid #2a2a2a
-  margin: 0.5rem
+  margin: 5rem 1.5rem
   vertical-align: top
-
   & > header
-    background-color: #2a2a2a
-    color: #ffffff
+    border-bottom: 1px solid $dark-color
+    color: $dark-color
     padding: 0.5rem
     text-transform: uppercase
-
+    font-family: $secondary-font
   ul
     padding: 1rem
     li
@@ -22,26 +38,50 @@ main
         margin-top: 1rem
       &.newUser:not(:first-child)
           margin-top: .5rem
-
-
-article
+article, section
   header
-    font-size: 1.2rem
-    font-weight: 900
+    font:
+      size: 1.2rem
+      weight: 900
+    margin-bottom: 0.5em
   section, footer
     padding-left: 1rem
-
+.buttons
+  float: right
+  margin: 0.3em 0
+  input
+    position: absolute
+    visibility: hidden
+  label
+    border: 1px solid $dark-color
+    cursor: pointer
+    font-weight: 900
+    margin-right: -4px
+    padding: 0.3em 1em
+    transition: all 0.1s ease-in-out
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1)
+  input:checked + label
+    border: 1px solid $dark-color
+    background-color: $dark-color
+    color: $light-color
 span
   font-weight: 900
-
 .todo
   grid-column: todoStart / todoEnd
-
 .activity
   grid-column: activityStart / activityEnd
-
 .lead
   color: blue
-
 .agreement
   color: green
+.main-footer
+  background:
+    image: url('bg-even-comming.jpg')
+    color: $bg-color
+    position: bottom
+    size: cover
+  bottom: 0
+  clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0% 100%)
+  height: 5em
+  position: fixed
+  width: 100%

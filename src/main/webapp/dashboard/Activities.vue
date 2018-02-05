@@ -28,12 +28,15 @@ module.exports = {
 
 <template>
   <div>
-    <button v-on:click="orderBy('date')">Order by date</button>
-    <button v-on:click="orderBy('project')">Order by project</button>
-
+    <div class="buttons">
+      <input type="radio" id="date" name="activities-switch"/>
+      <label v-on:click="orderBy('date')" for="date">Order by date</label>
+      <input type="radio" id="project" name="activities-switch" checked />
+      <label v-on:click="orderBy('project')" for="project">Order by project</label>
+    </div>
     <ul>
       <li v-for="(activities, grouping) in groupedActivities">
-        <span>{{grouping}} </span>
+        <span>{{grouping}}</span>
         <ul>
           <li v-for="activity in activities"  v-bind:class="{ newProject: activity.project, newUser: activity.user }">
             <article>

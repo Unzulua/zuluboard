@@ -26,8 +26,12 @@
 </script>
 <template>
   <div v-if="this.tasks.length > 0">
-    <button v-on:click="orderBy('dueDate')">Order by date</button>
-    <button v-on:click="orderBy('projectName')">Order by project</button>
+    <div class="buttons">
+      <input type="radio" id="dueDate" name="tasks-switch"/>
+      <label v-on:click="orderBy('dueDate')" for="dueDate">Order by date</label>
+      <input type="radio" id="projectName" name="tasks-switch" checked />
+      <label v-on:click="orderBy('projectName')" for="projectName">Order by project</label>
+    </div>
 
     <ul>
       <li v-for="(tasks, grouping) in groupedTasks">
